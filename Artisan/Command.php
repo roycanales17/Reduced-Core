@@ -215,7 +215,7 @@
 
         public function perform( array $config ): void
         {
-            $path = root. '/app/artisan/'.$config[ 'type' ].'/' .strtolower( $config[ 'class' ] ).'.php';
+            $path = root. '/artisan/'.$config[ 'type' ].'/' .strtolower( $config[ 'class' ] ).'.php';
 
             if ( file_exists( $path ) )
             {

@@ -19,7 +19,6 @@
   },
   "autoload": {
     "psr-4": {
-      "Artisan\\": "Artisan/",
       "Core\\": "Core/",
       "Database\\": "Database/",
       "Handler\\": "Handler/",

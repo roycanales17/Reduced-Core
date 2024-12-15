@@ -59,7 +59,7 @@
 				$cachedValue = $obj->get($key);
 				
 				if ($cachedValue !== false) {
-					return $cachedValue;
+					return $cachedValue['data'];
 				}
 				
 				$format = [

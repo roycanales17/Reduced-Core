@@ -2,6 +2,8 @@
 
     namespace Core;
 	
+	use Handler\SessionHandler;
+	
 	class Session
     {
         public static function setup(): void
@@ -20,10 +22,10 @@
             ini_set('session.gc_divisor', 100);
 
             # Session Handler
-            session_set_save_handler(new Handler\SessionHandler(), true);
+            session_set_save_handler(new SessionHandler(), true);
 
             # Register session close function
-            register_shutdown_function([new Handler\SessionHandler(), 'session_close']);
+            register_shutdown_function([new SessionHandler(), 'session_close']);
 
             # Start
             self::start();

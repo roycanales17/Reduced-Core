@@ -1,0 +1,20 @@
+{
+  "name": "roy404/reduced-core",
+  "description": "Custom framework core.",
+  "keywords": [
+    "php",
+    "framework"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Robroy Canales",
+      "email": "canales.robroy123@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0"
+  }
+}

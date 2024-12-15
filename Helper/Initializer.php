@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Helper;
+    namespace Helper;
 
     class Initializer
     {

@@ -1,14 +1,14 @@
 <?php
 
-    namespace app\Handler;
+    namespace Handler;
 
-    use App\Helper\Reflections;
-    use App\Helper\Skeleton;
-    use App\Request;
-    use App\Logger;
-    use Closure;
-
-    class ExceptionHandler
+    use Core\Logger;
+	use Core\Request;
+	use Helper\Reflections;
+	use Helper\Skeleton;
+	use Closure;
+	
+	class ExceptionHandler
     {
         use Reflections;
         use Skeleton;

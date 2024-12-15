@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Artisan\Make;
+    namespace Artisan\Make;
 
     class Exception {
 
@@ -35,8 +35,8 @@
             $content 	.=	"\tnamespace Http\Model$namespace;".PHP_EOL.PHP_EOL;
 
             $content    .=  "\tuse Exception;".PHP_EOL;
-            $content    .=  "\tuse App\Request;".PHP_EOL;
-            $content    .=  "\tuse App\Scheme\Throwable;".PHP_EOL.PHP_EOL;
+            $content    .=  "\tuse Request;".PHP_EOL;
+            $content    .=  "\tuse Scheme\Throwable;".PHP_EOL.PHP_EOL;
 
             $content 	.=	"\tclass $class_name extends Throwable".PHP_EOL;
             $content 	.=	"\t{".PHP_EOL;

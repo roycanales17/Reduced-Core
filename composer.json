@@ -19,7 +19,13 @@
   },
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "Artisan\\": "Artisan/",
+      "Core\\": "Core/",
+      "Database\\": "Database/",
+      "Handler\\": "Handler/",
+      "Helper\\": "Helper/",
+      "Requests\\": "Requests/",
+      "Scheme\\": "Scheme/"
     }
   }
 }

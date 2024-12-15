@@ -1,9 +1,8 @@
 <?php
 
-    namespace app;
-    use app\Handler\SessionHandler;
-
-    class Session
+    namespace Core;
+	
+	class Session
     {
         public static function setup(): void
         {
@@ -21,10 +20,10 @@
             ini_set('session.gc_divisor', 100);
 
             # Session Handler
-            session_set_save_handler(new \App\Handler\SessionHandler(), true);
+            session_set_save_handler(new Handler\SessionHandler(), true);
 
             # Register session close function
-            register_shutdown_function([new \App\Handler\SessionHandler(), 'session_close']);
+            register_shutdown_function([new Handler\SessionHandler(), 'session_close']);
 
             # Start
             self::start();

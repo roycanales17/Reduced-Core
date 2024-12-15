@@ -1,10 +1,10 @@
 <?php
 
-    namespace app\Scheme;
+    namespace Scheme;
 
-    use App\Request;
-
-    abstract class Middleware
+    use Core\Request;
+	
+	abstract class Middleware
     {
         public abstract function handle(Request $request);
     }

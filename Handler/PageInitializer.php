@@ -1,8 +1,8 @@
 <?php
 
-    namespace app\Handler;
+    namespace Handler;
 
-    use app\Helper\Initializer;
+    use Helper\Initializer;
     use Closure;
 
     class PageInitializer

@@ -1,24 +1,24 @@
 <?php
 
-    namespace app;
+    namespace Core;
 
-    use App\Handler\ExceptionHandler;
-    use App\Handler\MiddlewaresHandler;
-    use App\Handler\PageInitializer;
-    use App\Handler\RouteHandler;
-    use App\Helper\Initializer;
-    use App\Helper\Mapping;
-    use App\Helper\Reflections;
-    use App\Helper\Router;
-    use App\Helper\Skeleton;
-    use Closure;
-    use Error;
-    use Exception;
-    use ParseError;
-    use ReflectionClass;
-    use Throwable;
-
-    class Application
+    use Handler\ExceptionHandler;
+	use Handler\MiddlewaresHandler;
+	use Handler\PageInitializer;
+	use Handler\RouteHandler;
+	use Helper\Initializer;
+	use Helper\Mapping;
+	use Helper\Reflections;
+	use Helper\Router;
+	use Helper\Skeleton;
+	use Closure;
+	use Error;
+	use Exception;
+	use ParseError;
+	use ReflectionClass;
+	use Throwable;
+	
+	class Application
     {
         use Mapping;
         use Reflections;

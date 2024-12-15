@@ -1,10 +1,10 @@
 <?php
 
-    namespace app\Scheme;
+    namespace Scheme;
 
-    use App\Request;
-
-    interface Modules
+    use Core\Request;
+	
+	interface Modules
     {
         const standardTags = [
             // Document structure

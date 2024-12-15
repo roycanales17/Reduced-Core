@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Scheme;
+    namespace Scheme;
 
     /**
      * Class DBResult

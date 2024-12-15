@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Artisan\Clear;
+    namespace Artisan\Clear;
 
     class Logs {
 

@@ -1,11 +1,10 @@
 <?php
 
-    namespace app\Helper;
+    namespace Helper;
 
-    use App\Config;
-    use App\Request;
-
-    trait Skeleton
+    use Core\Request;
+	
+	trait Skeleton
     {
         use Mapping;
 

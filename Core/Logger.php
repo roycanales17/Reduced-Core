@@ -1,9 +1,8 @@
 <?php
 
-    namespace App;
-    use Error;
-
-    class Logger
+    namespace Core;
+	
+	class Logger
     {
 
         protected string $logFilePath;

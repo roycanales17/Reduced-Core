@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Database;
+    namespace Database;
 
     class Eloquent extends Blueprint
     {

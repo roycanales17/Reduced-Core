@@ -1,8 +1,8 @@
 <?php
 	
-	namespace app;
+	namespace Core;
 	
-	use app\Helper\BaseCarbon;
+	use Helper\BaseCarbon;
 	
 	class Carbon
 	{

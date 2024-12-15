@@ -1,8 +1,8 @@
 <?php
 
-    namespace app\Helper;
+    namespace Helper;
 
-    use app\Handler\RouteHandler;
+    use Handler\RouteHandler;
     use ReflectionClass;
 
     class Router

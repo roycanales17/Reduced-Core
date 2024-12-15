@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Artisan\Make;
+    namespace Artisan\Make;
 
     class Component {
 
@@ -34,8 +34,8 @@
             $content 	 =	'<?php'.PHP_EOL.PHP_EOL;
             $content 	.=	"\tnamespace includes$namespace;".PHP_EOL.PHP_EOL;
 
-            $content    .=  "\tuse app\Request;".PHP_EOL;
-            $content    .=  "\tuse app\Scheme\Components;".PHP_EOL.PHP_EOL;
+            $content    .=  "\tuse Request;".PHP_EOL;
+            $content    .=  "\tuse Scheme\Components;".PHP_EOL.PHP_EOL;
 
             $content 	.=	"\tclass $class_name extends Components".PHP_EOL;
             $content 	.=	"\t{".PHP_EOL;

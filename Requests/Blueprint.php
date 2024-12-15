@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Requests;
+    namespace Requests;
 
     class Blueprint
     {

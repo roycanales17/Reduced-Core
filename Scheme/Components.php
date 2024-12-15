@@ -1,11 +1,11 @@
 <?php
 
-    namespace app\Scheme;
+    namespace Scheme;
 
-    use App\Cache;
-	use App\Request;
-
-    abstract class Components implements Modules
+    use Core\Cache;
+	use Core\Request;
+	
+	abstract class Components implements Modules
     {
         private string $id;
         private string $token;

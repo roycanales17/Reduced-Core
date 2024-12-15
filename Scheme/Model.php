@@ -1,9 +1,9 @@
 <?php
 
-    namespace app\Scheme;
+    namespace Scheme;
 
-    use app\Database\Blueprint;
-    use app\Database\Eloquent;
+    use Database\Blueprint;
+    use Database\Eloquent;
 
     /**
      * Class Model

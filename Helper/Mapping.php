@@ -1,11 +1,10 @@
 <?php
 
-    namespace app\Helper;
+    namespace Helper;
 
-    use App\Config;
     use Exception;
-
-    trait Mapping
+	
+	trait Mapping
     {
         protected
         function getURI(bool $fullPath = false): string

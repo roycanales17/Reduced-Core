@@ -1,8 +1,8 @@
 <?php
 
-    namespace app\Database\SQL;
+    namespace Database\SQL;
 
-    use app\Database\DB as Database;
+    use Database\DB as Database;
 
     class Schema
     {

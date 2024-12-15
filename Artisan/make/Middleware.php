@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Artisan\Make;
+    namespace Artisan\Make;
 
     class Middleware {
 
@@ -34,8 +34,8 @@
             $content 	 =	'<?php'.PHP_EOL.PHP_EOL;
             $content 	.=	"\tnamespace http\Middleware$namespace;".PHP_EOL.PHP_EOL;
 
-            $content    .=  "\tuse app\Request;".PHP_EOL;
-            $content    .=  "\tuse App\Scheme\Middleware;".PHP_EOL.PHP_EOL;
+            $content    .=  "\tuse Request;".PHP_EOL;
+            $content    .=  "\tuse Scheme\Middleware;".PHP_EOL.PHP_EOL;
 
             $content 	.=	"\tclass $class_name extends Middleware".PHP_EOL;
             $content 	.=	"\t{".PHP_EOL;

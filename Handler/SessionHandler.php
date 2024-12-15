@@ -1,14 +1,14 @@
 <?php
 
-    namespace app\Handler;
+    namespace Handler;
 
-    use app\Database\DB;
-    use app\Database\SQL\Blueprint;
-    use app\Database\SQL\Schema;
-    use app\Session;
-    use SessionHandlerInterface;
-
-    class SessionHandler implements SessionHandlerInterface
+    use Core\Session;
+	use Database\DB;
+	use Database\SQL\Blueprint;
+	use Database\SQL\Schema;
+	use SessionHandlerInterface;
+	
+	class SessionHandler implements SessionHandlerInterface
     {
         protected string $table = 'session';
 

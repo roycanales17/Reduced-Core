@@ -1,6 +1,6 @@
 <?php
 	
-	namespace app;
+	namespace Core;
 	
 	use Exception;
 	use Memcached;

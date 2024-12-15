@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Database\SQL;
+    namespace Database\SQL;
 
     class Structure
     {

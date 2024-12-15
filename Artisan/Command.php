@@ -1,10 +1,10 @@
 <?php
 
-    namespace app\Artisan;
+    namespace Artisan;
 
-    use App\Config;
-
-    class Command
+    use Core\Config;
+	
+	class Command
     {
         protected static array $session = [];
         protected array $list = [];
@@ -221,7 +221,7 @@
             {
                 require_once $path;
 
-                $class = "App\\Artisan\\{$config[ 'type' ]}\\{$config[ 'class' ]}";
+                $class = "Artisan\\{$config[ 'type' ]}\\{$config[ 'class' ]}";
                 new $class( $this, $config[ 'args' ] );
             } else {
                 throw new \Exception( "Artisan action file not exist given ($path)." );

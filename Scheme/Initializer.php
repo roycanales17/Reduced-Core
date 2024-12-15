@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Scheme;
+    namespace Scheme;
 
     Interface Initializer {
 

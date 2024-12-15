@@ -1,10 +1,10 @@
 <?php
 
-    namespace app;
+    namespace Core;
 
-    use app\Requests\{Blueprint, Response};
-
-    class Request extends Blueprint
+    use Requests\{Blueprint, Response};
+	
+	class Request extends Blueprint
     {
         function __construct()
         {

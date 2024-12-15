@@ -1,6 +1,6 @@
 <?php
 
-    namespace app\Artisan\Make;
+    namespace Artisan\Make;
 
     class Model {
 
@@ -33,7 +33,7 @@
 
             $content 	 =	'<?php'.PHP_EOL.PHP_EOL;
             $content 	.=	"\tnamespace Http\Model$namespace;".PHP_EOL.PHP_EOL;
-            $content    .=  "\tuse app\Scheme\Model;".PHP_EOL.PHP_EOL;
+            $content    .=  "\tuse Scheme\Model;".PHP_EOL.PHP_EOL;
             $content 	.=	"\tclass $class_name extends Model".PHP_EOL;
             $content 	.=	"\t{".PHP_EOL;
             $content 	.=	"\t\t".'protected string $table = "'.strtolower( $class_name ).'";'.PHP_EOL;

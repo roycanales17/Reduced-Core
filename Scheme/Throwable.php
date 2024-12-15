@@ -1,9 +1,9 @@
 <?php
 
-    namespace app\Scheme;
+    namespace Scheme;
 
-    use app\Helper\Mapping;
-    use app\Helper\Skeleton;
+    use Helper\Mapping;
+    use Helper\Skeleton;
     use Error;
 
     abstract class Throwable extends Error

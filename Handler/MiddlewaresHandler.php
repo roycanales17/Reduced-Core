@@ -1,8 +1,8 @@
 <?php
 
-    namespace app\Handler;
+    namespace Handler;
 
-    use app\Helper\Mapping;
+    use Helper\Mapping;
     use Exception;
 
     class MiddlewaresHandler

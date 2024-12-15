@@ -1,8 +1,8 @@
 <?php
 
-    namespace App\Database;
+    namespace Database;
 
-    use App\Scheme\DBResult;
+    use Scheme\DBResult;
     use Exception;
 
     /**

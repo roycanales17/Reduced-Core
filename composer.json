@@ -18,6 +18,9 @@
     "php": "^8.0"
   },
   "autoload": {
+    "files": [
+      "Helper/Standards.php"
+    ],
     "psr-4": {
       "Core\\": "Core/",
       "Database\\": "Database/",

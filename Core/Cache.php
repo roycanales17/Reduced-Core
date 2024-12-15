@@ -54,6 +54,8 @@
 			$obj = self::instance();
 			
 			if ($obj) {
+				
+				$key = "remember:$key";
 				$cachedValue = $obj->get($key);
 				
 				if ($cachedValue !== false) {

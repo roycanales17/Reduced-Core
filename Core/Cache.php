@@ -38,6 +38,41 @@
 		}
 		
 		/**
+		 * Retrieve a value from the cache or store it if it does not exist.
+		 *
+		 * This method checks if a key exists in Memcache. If the key exists, it retrieves
+		 * the cached value. If not, it executes the provided callback to generate the value,
+		 * stores it in the cache with the specified timeout, and then returns the value.
+		 *
+		 * @param string $key
+		 * @param callable $callback
+		 * @param int $expire
+		 * @return mixed
+		 */
+		public static function remember(string $key, callable $callback, int $expiration = 60): mixed
+		{
+			$obj = self::instance();
+			
+			if ($obj) {
+				$cachedValue = $obj->get($key);
+				
+				if ($cachedValue !== false) {
+					return $cachedValue;
+				}
+				
+				$format = [
+					'data' => $value = $callback(),
+					'expires_at' => time() + $expiration,
+				];
+				$obj->set($key, $format, $expiration);
+				return $value;
+			}
+			
+			// If Memcache is not available, just return the callback result
+			return $callback();
+		}
+		
+		/**
 		 * Check if a key exists in Memcache.
 		 *
 		 * @param string $key

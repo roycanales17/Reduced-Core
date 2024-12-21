@@ -188,13 +188,13 @@
             return false;
         }
 
-        protected function getInput( string $name = '' ): mixed
-        {
-            if ( !$name )
-                return $this->payload;
+		protected function getInput( string $name = '' ): mixed
+		{
+			if ( !$name )
+				return $this->payload[ "INPUTS" ] ?? [];
 
-            return $this->payload[ strtolower( $name ) ] ?? "";
-        }
+			return $this->payload[ "INPUTS" ][ strtolower( $name ) ] ?? "";
+		}
 
         protected function inputPayload( string $type ): array {
             return $this->payload[ strtoupper( $type ) ] ?? [];
@@ -211,12 +211,12 @@
             $this->payload[ "POST" ] = array_change_key_case( $_POST );
             $this->payload[ "FILES" ] = array_change_key_case( $_FILES );
             $this->payload[ "JSON" ] = array_change_key_case( json_decode( $jsonData, true ) ?? [] );
-			
-			$this->payload = array_merge(
-				$this->payload["GET"] ?? [],
-				$this->payload["POST"] ?? [],
-				$this->payload["FILES"] ?? [],
-				$this->payload["JSON"] ?? []
+
+			$this->payload[ "INPUTS" ] = array_merge(
+				$this->payload[ "GET" ] ?? [],
+				$this->payload[ "POST" ] ?? [],
+				$this->payload[ "FILES" ] ?? [],
+				$this->payload[ "JSON" ] ?? []
 			);
 		}
 

@@ -43,6 +43,38 @@
             return $file[ strtolower( $input ) ] ?? '';
         }
 
+		public function files( string $input ): array
+		{
+			$files = $this->file( $input );
+			$indexedFiles = [];
+
+			if ( !empty( $files ) ) {
+				if ( isset( $files[ 'name' ] ) && is_array( $files[ 'name' ] ) ) {
+					foreach ( $files[ 'name' ] as $index => $name ) {
+						$indexedFiles[] = [
+							'name' => $name,
+							'full_path' => $files[ 'full_path' ][ $index ],
+							'type' => $files[ 'type' ][ $index ],
+							'tmp_name' => $files[ 'tmp_name' ][ $index ],
+							'error' => $files[ 'error' ][ $index ],
+							'size' => $files[ 'size' ][ $index ]
+						];
+					}
+				} else {
+					$indexedFiles[] = [
+						'name' => $files[ 'name' ],
+						'full_path' => $files[ 'full_path' ],
+						'type' => $files[ 'type' ],
+						'tmp_name' => $files[ 'tmp_name' ],
+						'error' => $files[ 'error' ],
+						'size' => $files[ 'size' ]
+					];
+				}
+			}
+
+			return $indexedFiles;
+		}
+
         public function has( string $input ): bool {
             return array_key_exists( strtolower( $input ), $this->inputs() );
         }

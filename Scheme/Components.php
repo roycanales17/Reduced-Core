@@ -109,13 +109,13 @@
         private
         function replaceWithJSListener(string $rendered): string
         {
-            preg_match_all('/(?:\$\$|this)\.listen\s*\(\s*["\']([^"\']+)["\']/', $rendered, $matches, PREG_SET_ORDER);
+            preg_match_all('/(?<=\s)(?:\$\$|this)\.listen\s*\(\s*["\']([^"\']+)["\']/', $rendered, $matches, PREG_SET_ORDER);
 
             foreach ($matches as $match) {
                 $originalFunc = $match[1];
                 $encryptedFunc = $this->moduleEncryptedAction($originalFunc);
                 $rendered = preg_replace_callback(
-                    '/(?:\$\$|this)\.listen\s*\(\s*["\']' . preg_quote($originalFunc, '/') . '["\']/',
+                    '/(?<=\s)(?:\$\$|this)\.listen\s*\(\s*["\']' . preg_quote($originalFunc, '/') . '["\']/',
                     function ($matches) use ($encryptedFunc, $originalFunc) {
                         return str_replace($originalFunc, $encryptedFunc, $matches[0]);
                     },
@@ -169,8 +169,8 @@
 			$length = strlen($this->name);
 			$token = encryptString($this->token, $length);
 			
-            $pattern = '/((?:this|\$\$)\.ajax)\(\s*(\{.*?}|\[.*?]|["\'].*?["\']|[^)]+?)\s*\)/s';
-            $replacement = '$1($2, \'' . $token . '\')';
+			$pattern = '/(?<=\s)((?:this|\$\$)\.ajax)\(\s*(\{.*?}|\[.*?]|["\'].*?["\']|[^)]+?)\s*\)/s';
+			$replacement = '$1($2, \'' . $token . '\')';
 			return preg_replace($pattern, $replacement, $rendered);
         }
 

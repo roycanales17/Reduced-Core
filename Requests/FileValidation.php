@@ -12,7 +12,7 @@
             else
                 $files = $_FILES;
 
-            return array_key_exists( strtoupper( $key ), $files );
+            return array_key_exists( $key, $files );
         }
 
         protected function validateFileMimeType( string $key, string $allowedExtensions, string|bool $error = true ): bool

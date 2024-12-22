@@ -93,7 +93,7 @@
             return $this;
         }
 
-        protected function create( array $binds, array $fillable, string $table )
+		function create( array $binds, array $fillable, string $table )
         {
             self::remove_unfillable( $binds, $fillable );
             $columns = array_keys( $binds );
@@ -101,7 +101,7 @@
             return db::run( "INSERT INTO `$table` ( `". implode( '`, `', $columns ) ."` ) VALUES ( :". implode( ', :', $columns ) ." )", $binds )->lastID();
         }
 
-        protected function replace( array $binds, array $fillable, string $table )
+		function replace( array $binds, array $fillable, string $table )
         {
             self::remove_unfillable( $binds, $fillable );
             $columns = array_keys( $binds );

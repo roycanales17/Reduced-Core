@@ -47,6 +47,9 @@
 		public function create(string $filename, array|string $fileOrContent): bool
 		{
 			if (!is_object($this->disk)) {
+
+				self::makeDirectory(dirname($filename));
+
 				if ($fileOrContent && is_string($fileOrContent)) {
 					if (file_put_contents($filename, $fileOrContent) !== false) {
 						return true;

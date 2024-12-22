@@ -17,7 +17,7 @@
         }
 
         public
-        function search(string $property): false|string
+        function search(string $property): mixed
         {
             $obj = $this->route;
             $reflection = new ReflectionClass($obj);

@@ -53,10 +53,9 @@
 		{
 			$class = $action[0] ?? '';
 			$method = $action[1] ?? '';
-			$args = $action[3] ?? [];
 
 			if ($class && $method && class_exists($class) && method_exists($class, $method)) {
-				$this->perform[trim($uri, '/')] = [$class, $method, $args];
+				$this->perform[trim($uri, '/')] = [$class, $method];
 			}
 		}
 	}

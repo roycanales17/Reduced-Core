@@ -44,11 +44,9 @@
                 'fillable'
             ]);
 
-            $query = new Eloquent();
-            $reflection = new \ReflectionClass($query);
-            $method = $reflection->getMethod('create');
-            $method->setAccessible(true);
-            return $method->invoke($binds, $object->getFillable(), $object->getTable());
+			$query = new Eloquent();
+			$query->table( $object->getTable() );
+			return $query->insert( $binds, $object->getFillable() );
         }
 
         /**
@@ -67,10 +65,8 @@
             ]);
 
             $query = new Eloquent();
-            $reflection = new \ReflectionClass($query);
-            $method = $reflection->getMethod('replace');
-            $method->setAccessible(true);
-            return $method->invoke($binds, $object->getFillable(), $object->getTable());
+			$query->table( $object->getTable() );
+            return $query->replace( $binds, $object->getFillable() );
         }
 
         /**

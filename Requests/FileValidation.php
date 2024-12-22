@@ -7,8 +7,8 @@
     {
         protected function validateFile( string $key ): bool
         {
-            if ( $this->request[ 'FILES' ] ?? false )
-                $files = $this->request[ 'FILES' ];
+            if ( $this->payload[ 'FILES' ] ?? false )
+                $files = $this->payload[ 'FILES' ];
             else
                 $files = $_FILES;
 

@@ -164,6 +164,48 @@
 		}
 
 		/**
+		 * Retrieves the content of a file.
+		 *
+		 * @param string $path The path to the file.
+		 * @return mixed The file content if it exists, otherwise `false`.
+		 */
+		public function getContent(string $path): mixed
+		{
+			if (!is_object($this->disk)) {
+				if (self::exists($path)) {
+					$fullPath = $this->disk . '/' . ltrim($path, '/');
+					return file_get_contents($fullPath);
+				} else {
+					Logger::path('warning.log')->warning("File does not exist [$path].");
+				}
+			}
+
+			return false;
+		}
+
+		/**
+		 * Loads the content of a file and sets the appropriate headers.
+		 *
+		 * @param string $path The path to the file.
+		 * @return mixed The file content if it exists and loads successfully, otherwise `false`.
+		 */
+		public function load(string $path): mixed
+		{
+			if (!is_object($this->disk)) {
+				if (self::exists($path)) {
+					$fullPath = $this->disk . '/' . ltrim($path, '/');
+					$mimeType = self::mimeType($path);
+					header('Content-Type: ' . $mimeType);
+					return file_get_contents($fullPath);
+				} else {
+					Logger::path('warning.log')->warning("File does not exist [$path].");
+				}
+			}
+
+			return false;
+		}
+
+		/**
 		 * Checks if a file or directory exists at the specified path.
 		 *
 		 * @param string $path The relative path to check for existence.

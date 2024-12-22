@@ -253,6 +253,11 @@
                 if (!is_null($this->routes)) {
                     $route = new Router($this->routes);
 
+					// Perform class method
+					if ($actions = $route->search('perform')) {
+						return($this->performAction($actions));
+					}
+
 					// Load component directly
                     if ($className = $route->search('render')) {
                         return(render($className, request()->inputs()));

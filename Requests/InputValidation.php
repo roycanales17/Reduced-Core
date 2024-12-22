@@ -138,7 +138,7 @@
         {
             if ( is_array( $value ) ) {
                 foreach ( $value as $input_key => $key_value ) {
-                    if ( empty( trim( $key_value ) ) ) {
+                    if ( !is_array( $key_value ) && empty( trim( $key_value ) ) ) {
                         $key = $input_key;
                         return false;
                     }
